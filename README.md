@@ -80,6 +80,43 @@ In this section we will:
     
 
 ## 	🌎 Collaborative filtering based recommendation system
+This is a movie recommendation system that uses collaborative filtering to recommend movies to users. The system uses K-means clustering to group users and movies into clusters based on their similarity, which helps identify similar users and recommend movies to them.
+
+### 🌑 Data Preparation
+The first step in creating a collaborative filtering-based recommendation system is to prepare the data. This includes cleaning the data, removing duplicates, and ensuring that it is in a format that can be used by the model. There were two data frames the movies and the rating, I had to merge then appropriately to make use of them.
+
+### 🌒 Dataset Analysis
+
+### 1. Finding the average user rating of each movie
+To find the average user rating of each movie, I grouped the ratings by movie ID and calculated the mean rating for each movie. This information can be useful in the popularity-based recommender system.
+
+### 2. Finding the likability of each genre
+To find the likability of each genre, I calculated the percentage of ratings that each genre received out of the total number of ratings. This information can be useful in both the content-based and collaborative filtering recommender systems.
+
+![image](https://user-images.githubusercontent.com/89579327/230011527-67f22cf1-679e-429d-83a4-f49fa8fb6269.png)
+
+
+### 3. Number of movies in each genre
+To get an idea of the distribution of movies across genres, I counted the number of movies in each genre. This information can be useful in the content-based recommender system.
+
+![image](https://user-images.githubusercontent.com/89579327/230011577-099610bf-edf0-4d24-89b3-499cf60770d3.png)
+
+
+### 🌓 Model Initialization
+The next step is to initialize the collaborative filtering model. This involves selecting the appropriate parameters and fitting the model to the data.
+The best parameters selecetd were as follows:
+```
+KMeans(init='k-means++', n_clusters=5, n_init=12)
+```
+### 🌔 Clustering
+Once the model is initialized, the system uses K-means clustering to group users and movies into clusters based on their similarity. This is done by calculating the similarity between users and movies and grouping them into clusters based on their similarity scores.
+
+### 🌕 Elbow Method
+To find the optimal number of clusters, the system uses the elbow method. This involves plotting the within-cluster sum of squares for different values of k and selecting the value where the curve starts to flatten out. The best value of the clusters was found out to be 5.
+
+
+![image](https://user-images.githubusercontent.com/89579327/230010311-3a70dffa-6ca7-48f0-a46c-508f8be25e03.png)
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
